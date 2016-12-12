@@ -5,7 +5,7 @@ $prem=(int)$_POST['prem'];
 $estandar=(int)$_POST['estan'];
 $disca=(int)$_POST['disca'];
 
-if($prem > 150 || $estandar > 300 || $disca > 15){
+if($prem > 150 || $estandar > 200 || $disca > 15){
 	echo "Has excedido el numero maximo de boletos a vender en alguna seccion.";
 }else{
 
@@ -18,14 +18,13 @@ $db="eventos";
 $link = mysql_connect($server,$user,$pass); 
 mysql_select_db($db, $link); 
 
-$consulta="create table $artista (Fecha varchar(39), a int , b int, c int)";
-	$result = mysql_query($consulta, $link);
-$consulta2="insert into $artista VALUES('$fecha','$prem', '$estandar', '$disca')";
+$consulta2="INSERT INTO eventos(Artista, Fecha, premium, estandar, discapacitados) VALUES('$artista','$fecha' ,'$prem', '$estandar', '$disca')";
 $result2 = mysql_query($consulta2, $link);
 	if($result2){
-		header("Location:agregado.php");
+		echo "<p>Concierto de $artista agregado, con: <br>$prem boletos Premium, <br> $estandar boletos estandar. <br> $disca boletos para discapacitados</p>";
+
 	}else{
-		echo "No agregado, verifica que: ";
+		echo "<p>No se ha podido agregar, rifate Palmerin</p>";
 	}
 }
 

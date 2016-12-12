@@ -1,1 +1,1 @@
-Una pagina que para el administrador de mi sitio le sea posible acceder, a partir de ahi ver, agregar eventos, editarinformacion del mismo, ver disponibilidad de asientos, cambiar boletos de vendido a libre, eliminar un evento
+Una pagina que para el administrador de mi sitio le sea posible acceder, a partir de ahi ver, agregar eventos, editar informacion del mismo, ver disponibilidad de asientos, cambiar boletos de vendido a libre, eliminar un evento.

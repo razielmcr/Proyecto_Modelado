@@ -4,6 +4,16 @@
 </head>
 <body>
 <form method = 'post' action = 'agrega.php'>
+<center><a href="menuAdmin.php">MENU PRINCIPAL</a></center>
+<table>
+		<tr>
+		<td> <a href="agrega.html">Agrega evento |</a> </td>
+		<td><a href="verEventos.html">Ver eventos |</a> </td>
+		<td><a href="edita.php">Editar evento |</a> </td>
+		<td><a href="asientos.html">Edita asientos |</a> </td>
+		<td><a href="eliminaEvento.html">Elimina evento |</a> </td>
+		</tr>
+	</table>
 	<p>Agrega evento</p>
 	<table>
 		<tr>
@@ -13,17 +23,19 @@
 			<td>Fecha: <input type="date" name="fecha"> </label></td>
 		</tr>
 		<tr>
-			<td>Numero de voletos disponibles para venta en Zona Premium: <input type="text" name="prem"> </label></td>
+			<td>Numero de voletos disponibles para venta en Zona Premium:  <input type="text" name="prem"><label class='asterisco'>1 </label></td>
 		</tr>
 		<tr>
-			<td>Numero de voletos disponibles para venta en Zona Estandar: <input type="text" name="estan"> </label></td>
+			<td>Numero de voletos disponibles para venta en Zona Estandar: <input type="text" name="estan"> <label class='asterisco'>2 </label></td>
 		</tr>
 		<tr>
-			<td>Numero de voletos disponibles para venta en Zona de Discapacitados: <input type="text" name="disca"> </label></td>
+			<td>Numero de voletos disponibles para venta en Zona de Discapacitados: <input type="text" name="disca"> <label class='asterisco'>3 </label></td>
 		</tr>
 
 		<tr><td><input type="submit" value="Agregar"></td></tr>
 	</table>
+	<p id = "aclaraciones">1: Maximo 150 <br> 2: Maximo 200 <br> 3: Maximo: 15</br> 
+</p>
 </form>
 </body>
 </html>
