@@ -14,6 +14,7 @@
 		</tr>
 	</table>
 	<p>Edita evento</p>
+	
 <form method = 'post' action = 'edita2.php'>
 	<table>
 	<tr>

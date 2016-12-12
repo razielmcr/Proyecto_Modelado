@@ -5,7 +5,7 @@ $prem=(int)$_POST['prem'];
 $estandar=(int)$_POST['estan'];
 $disca=(int)$_POST['disca'];
 
-if($prem > 150 || $estandar > 200 || $disca > 15){
+if($prem > 150 || $estandar > 300 || $disca > 15){
 	echo "Has excedido el numero maximo de boletos a vender en alguna seccion.";
 }else{
 
