@@ -1,7 +1,7 @@
 <?php
 
-	$c=$_POST["primero"];
-	echo "El Evento elegido cuenta con estos datos: ";
+	$id=$_POST["primero"];
+	echo "El Evento elegido cuenta con estos datos: " .$id;
 	$user="root";
 	$pass="pass";
 	$server="localhost";
@@ -9,7 +9,7 @@
 
 	$link = mysql_connect($server,$user,$pass); 
 	mysql_select_db($db, $link);
-	$consulta= "SELECT * FROM eventos WHERE Artista = '$c'";
+	$consulta= "SELECT * FROM eventos WHERE id_evento = '$id'";
 	$result = mysql_query($consulta, $link);
 	while ($row = mysql_fetch_array($result)) {
 		$artista=$row["Artista"];
@@ -30,6 +30,9 @@
 <form method="POST" action="alterarEvento.php">
 	
 <table>
+		<tr>
+			<td>Id evento <input type="text" name="idA" value=<?php echo $id; ?> > </td>
+		</tr>
 		<tr>
 			<td>Cambio de Fecha: <input type="date" name="fecha" value=<?php echo $date; ?>> </td>
 		</tr>
