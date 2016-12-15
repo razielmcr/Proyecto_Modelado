@@ -113,7 +113,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="Imagenes/arctic.jpg" style="width:100%">
+  <img src="Imagenes/foals.jpg" style="width:100%">
   <div class="text" style="color:RED;">Haz click para comprar boletos.</div>
 </div>
 
