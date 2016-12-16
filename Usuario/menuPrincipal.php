@@ -43,7 +43,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: 15px;
+  font-size: 30px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -84,6 +84,16 @@ body {font-family: Verdana,sans-serif;margin:0}
   animation-duration: 1.5s;
 }
 
+.entrada{
+  color: BLUE;
+  font-size: 80px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
 @-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -105,7 +115,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <a href="comprar.php">
+  <a href="compra.php">
   <img src="Imagenes/arctic.jpg" style="width:100%">
   </a>
   <div class="text" style="color:RED;">Haz click para comprar boletos.</div>
@@ -113,13 +123,17 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
+  <a href="compra.php">
   <img src="Imagenes/foals.jpg" style="width:100%">
+  </a>
   <div class="text" style="color:RED;">Haz click para comprar boletos.</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
+ <a href="compra.php">
   <img src="Imagenes/arctic.jpg" style="width:100%">
+  </a>
   <div class="text" style="color:RED;">Haz click para comprar boletos.</div>
 </div>
 
@@ -134,7 +148,6 @@ body {font-family: Verdana,sans-serif;margin:0}
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
-
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -164,5 +177,8 @@ function showSlides(n) {
 }
 </script>
 
+<div>
+<p class="entrada">FORO CONCIERTO.</p>
+</div>
 </body>
 </html> 
