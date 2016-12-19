@@ -64,6 +64,7 @@
 	* @param $conexion    La conexion que tenemos a la base de datos.
 	* @param $tabla       Tabla en la cual queremos insertar los elementos.
 	* @param $elementos   Arreglo de elementos a insertar en la tabla.
+	* @return 			  Regresa la consulta obtenida.
 	*/
 	function insertar($conexion, $tabla, $array){
 		$consulta = "INSERT INTO $tabla VALUES(";
@@ -82,12 +83,39 @@
 	/**
 	* Metodo que regresa toda la tabla pedida.
 	* @param $conexion  Conexion que hemos hecho a la base de datos.
+	* @param $columna   Columnas que queremos obtener; ej: *, Precio, etc;
 	* @param $tabla     Tabla que queremos obtener;
+	* @return 			Regresa la consulta obtenida.
 	*/
-	function getTabla($conexion, $tabla){
-		$consulta = "SELECT * FROM $tabla";
+	function getTabla($conexion, $columna, $tabla){
+		$consulta = "SELECT $columna FROM $tabla";
 		return $conexion -> query($consulta);
 	}
 
+
+	/**
+	* Metodo para actualizar algun elemento de la tabla.
+	* @param $conexion   Conexion que se establecio a la base de datos.
+	* @param $tabla      Tabla en la que editaremos los elementos.
+	* @param $array      Arreglo asociativo que contiene la(s) columna(s) a editar como llave
+	* 					    y el reemplazo como valor.
+	* @return 			 Regresa la consulta obtenida.
+	*/
+	function actualizar($conexion, $tabla, $array, $id_evento){
+		$consulta= "UPDATE $tabla SET";
+		$c = 0;
+		foreach($array as $key => $value){
+			$query = " $key=";
+			$reemplazo = (gettype($value) == "string") ? "'$value'" : $value;
+			$query = $query.$reemplazo;
+			$query = ($c == 0) ? $query : ", ".$query;
+			$consulta = $consulta.$query;
+			$c++;
+		}
+
+		$consulta = $consulta." WHERE ID_evento='$id_evento'";
+		echo "<br>".$consulta; 
+		return $conexion -> query($consulta);
+	}
 
 ?>

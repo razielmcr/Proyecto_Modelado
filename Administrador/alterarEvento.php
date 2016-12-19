@@ -1,28 +1,30 @@
 <?php
-$id=(int)$_POST["idA"];
-$artista=$_POST["artista"];
-$fecha=$_POST["fecha"];
-$premium=$_POST["prem"];
-$estandar=$_POST["estan"];
-$discapacitados=$_POST["disca"];
+	
+	include("../Conexion/Conexion.php");
+	$conexion = conectar();
 
-$consulta= "UPDATE eventos SET Fecha='$fecha', premium='$premium', estandar= '$estandar', discapacitados = '$discapacitados' WHERE id_evento = '$id'"; 
-$user="root";
-$pass="pass";
-$server="localhost";
-$db="eventos";
+	// $id = $_POST["idA"];
+	// $artista = $_POST["artista"];
+	// $fecha = $_POST["fecha"];
+	// $premium = (int)$_POST["prem"];
+	// $estandar = (int)$_POST["estan"];
+	// $discapacitados = (int)$_POST["disca"];
 
+	$idProvisional = "a82165";
 
-$link = mysql_connect($server,$user,$pass); 
-mysql_select_db($db, $link); 
-$result2 = mysql_query($consulta, $link);
+	$array = array("Artista" => "Aqui va \$id", "Fecha" => "19-09-19 \$fecha", "Premium" => 90, 
+		             "Estandar" => 20, "Discapacitados" => 20, "ID_evento" => "a82165", 
+		             "Imagen" => "Prueba2.jpg", "Precio" => 500);
+	
+	echo $table;
 
-if($result2){
-	header("Location:cambioExitoso.html");
-}else{
-	echo "Errrooooor";
-}
+	$result = actualizar($conexion, $table, $array, $idProvisional);
 
+	if($result){
+		header("Location:cambioExitoso.html");
+	}else{
+		echo "<br>Errrooooor";
+	}
 
 
 ?>
