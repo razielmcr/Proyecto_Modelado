@@ -4,22 +4,20 @@
 </head>
 <body>
 <?php 
-	$user="root";
-	$pass="pass";
-	$server="localhost";
-	$db="eventos";
 
-	$link = mysql_connect($server,$user,$pass); 
-	mysql_select_db($db, $link); 
-	$d = $_POST["primero"];
-	$consulta="SELECT * FROM eventos WHERE id_evento = $d";
-	$result = mysql_query($consulta, $link);
-	while ($row = mysql_fetch_array($result)) {
-	$im=$row["Artista"];
-	echo "<p>Selecciona tu boleto del evento de $im </p>" ;
+	include("../Conexion/Conexion.php");
+	$conexion = conectar();
+
+	$id = $_POST["primero"];
+
+	$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
+
+	while ($row = $result -> fetch_assoc()) {
+		$im = $row["Artista"];
+		echo "<p>Selecciona tu boleto del evento de $im </p>" ;
 	}
-	?>
-<div>
+?>
+<div> 
 <form method = 'post' action = 'compra3.php'>
 	<table>
 		<td>

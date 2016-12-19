@@ -1,28 +1,24 @@
 <?php
-$id_evento= $_POST["evento"];
-$seccion = $_POST["seccion"];
-$fila = $_POST["fila"];
-$asiento= $_POST["asiento"];
-$compra= $seccion . ",". $fila."," . $asiento;
+	
+	include("../Conexion/Conexion.php");
+	$table = "asientos";
+	$conexion = conectar();
+	
+	$id_evento = $_POST["evento"];
+	$seccion = $_POST["seccion"];
+	$fila = $_POST["fila"];
+	$asiento = $_POST["asiento"];
+	$compra = $seccion . ",". $fila."," . $asiento;
 
-echo "Su compra fue del evento: ". $id_evento . " en el asiento: " . $compra;
-$user="root";
-$pass="pass";
-$server="localhost";
-$db="asientos";
+	$array = array($id_evento, $compra);
 
-$link = mysql_connect($server,$user,$pass); 
-mysql_select_db($db, $link); 
-#$consulta = "SELECT * FROM `".$id_evento."` WHERE MATCH (compra) AGAINST ('$compra')";
+	$result	= insertar($conexion, $table, $array);
 
-$consult2 = "INSERT INTO `$id_evento` VALUES('$id_evento', '$compra')";
-$result2 = mysql_query($consult2, $link);
-if ($result2){
-	echo "<p>Comprado </p>";
-}
+	if ($result){
+		echo "<p>Comprado </p>";
+	}
 	else{
-	echo "<p>no Comprado </p>";
-
+		echo "<p>no Comprado </p>";
 	}
 
 ?>

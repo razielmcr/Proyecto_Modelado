@@ -11,23 +11,20 @@
 		<td>
 		<select name="primero">
 		<?php
-			$user="root";
-			$pass="pass";
-			$server="localhost";
-			$db="eventos";
+		
+			include("../Conexion/Conexion.php");
+			$conexion = conectar(); 
 
-			$link = mysql_connect($server,$user,$pass); 
-			mysql_select_db($db, $link); 
+			$consulta = "SELECT * FROM $table";
+			$result = $conexion -> query($consulta);	
 
-			$consulta="SELECT * FROM eventos";
-			$result = mysql_query($consulta, $link);	
-			while($row = mysql_fetch_array($result))  {
-				$id=$row["id_evento"];
-				$artista=$row["Artista"];
-				$fec=$row["Fecha"];
-				echo $artista;
+			while($row = $result -> fetch_assoc()){
+				$id = $row["ID_evento"];
+				$artista = $row["Artista"];
+				$fec = $row["Fecha"];
 				echo "<option value='$id'>$artista, Fecha:  $fec</option>";
 			}
+
 			?>
 		</select>
 		</td>
