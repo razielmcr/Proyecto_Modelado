@@ -15,8 +15,7 @@
 			include("../Conexion/Conexion.php");
 			$conexion = conectar(); 
 
-			$consulta = "SELECT * FROM $table";
-			$result = $conexion -> query($consulta);	
+			$result = getTabla($conexion, $table);
 
 			while($row = $result -> fetch_assoc()){
 				$id = $row["ID_evento"];

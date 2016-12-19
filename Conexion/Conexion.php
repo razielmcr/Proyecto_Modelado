@@ -76,8 +76,18 @@
 			$c++;
 		}
 		$consulta = $consulta.")";
-		echo $consulta;
 		return $conexion -> query($consulta);
 	}
+
+	/**
+	* Metodo que regresa toda la tabla pedida.
+	* @param $conexion  Conexion que hemos hecho a la base de datos.
+	* @param $tabla     Tabla que queremos obtener;
+	*/
+	function getTabla($conexion, $tabla){
+		$consulta = "SELECT * FROM $tabla";
+		return $conexion -> query($consulta);
+	}
+
 
 ?>
