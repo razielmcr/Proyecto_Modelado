@@ -21,25 +21,19 @@
 		<td>
 		<select name="borrar">
 		<?php
-			$user="root";
-			$pass="pass";
-			$server="localhost";
-			$db="eventos";
+			include("../Conexion/Conexion.php");
+			$conexion = conectar();
 
-			$link = mysql_connect($server,$user,$pass); 
-			mysql_select_db($db, $link); 
+			$result = getTabla($conexion, "*", $table);
+			while ($row = $result -> fetch_assoc()) {
+				$id = $row["ID_evento"];
+				$artista = $row["Artista"];
+				$fecha = $row["Fecha"];
 
-
-			$consulta="SELECT * FROM eventos";
-			$result = mysql_query($consulta, $link);	
-			while($row = mysql_fetch_array($result))  {
-				$id=$row["id_evento"];
-				$artista=$row["Artista"];
-				$fecha=$row["Fecha"];
 				echo "<option value='$id'>$artista - $fecha</option>";
 			}
 
-			?>
+		?>
 		</select>
 		</td>
 	</tr>

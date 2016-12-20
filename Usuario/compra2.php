@@ -9,7 +9,7 @@
 	$conexion = conectar();
 
 	$id = $_POST["primero"];
-
+	echo $id;
 	$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
 
 	while ($row = $result -> fetch_assoc()) {

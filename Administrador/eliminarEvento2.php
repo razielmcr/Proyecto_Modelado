@@ -1,18 +1,15 @@
 <?php
-$aBorrar=$_POST["borrar"];
-	$user="root";
-	$pass="pass";
-	$server="localhost";
-	$db="eventos";
+	
+	include("../Conexion/Conexion.php");
+	$conexion = conectar();
 
-	$link = mysql_connect($server,$user,$pass); 
-	mysql_select_db($db, $link); 
+	$id = $_POST["borrar"];
 
-
-	$consulta="DELETE FROM eventos WHERE id_evento = '$aBorrar'";
-	$result = mysql_query($consulta, $link);
+	$result = eliminar($conexion, $table, $id, "ID_evento");
 	if($result){
 		header("Location:cambioExitoso.html");
 	}
-
+	else{
+		echo "<h1>No se ha podido eliminar el evento.</h1>"
+	}
 ?>

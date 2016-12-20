@@ -21,26 +21,18 @@
 		<td>
 		<select name="primero">
 		<?php
-			$user="root";
-			$pass="pass";
-			$server="localhost";
-			$db="eventos";
 
-			$link = mysql_connect($server,$user,$pass); 
-			mysql_select_db($db, $link); 
+			include("../Conexion/Conexion.php");
+			$conexion = conectar();
 
-
-			$consulta="SELECT * FROM eventos";
-			$result = mysql_query($consulta, $link);	
-			while($row = mysql_fetch_array($result))  {
-				$id=$row["id_evento"];
-				$artista=$row["Artista"];
-				$fec=$row["Fecha"];
-				echo $artista;
+			$result = getTabla($conexion, "*", $table);	
+			while($row = $result -> fetch_assoc()) {
+				$id = $row["ID_evento"];
+				$artista = $row["Artista"];
+				$fec = $row["Fecha"];
 				echo "<option value='$id'>$artista - $fec</option>";
 			}
-
-			?>
+		?>
 		</select>
 		</td>
 	</tr>
