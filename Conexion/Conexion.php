@@ -148,6 +148,8 @@
 		$id_nuevo = (gettype($id) == "string") ? "'$id'" : $id;
 		echo $id_nuevo;
 		$consulta = "DELETE FROM $tabla WHERE $columna=$id_nuevo";
+		$consulta2 = "DELETE FROM asientos WHERE $columna=$id_nuevo";
+		$conexion -> query($consulta2);
 		return $conexion -> query($consulta);
 	}
 ?>

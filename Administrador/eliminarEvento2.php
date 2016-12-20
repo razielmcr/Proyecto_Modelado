@@ -10,6 +10,6 @@
 		header("Location:cambioExitoso.html");
 	}
 	else{
-		echo "<h1>No se ha podido eliminar el evento.</h1>"
+		echo "<h1>No se ha podido eliminar el evento.</h1>";
 	}
 ?>
