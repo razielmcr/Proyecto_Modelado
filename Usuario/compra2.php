@@ -78,7 +78,7 @@
 	</td>
 	<td>
 		<img src="Imagenes/lugar.jpg" alt="Mapa del evento" width="600" height="400" >
-
+		<p>¿Necesita comprar su boleto fisicamente? <a href="mapa.html"> Ubique la taquilla mas cercana aqui.</a></p>
 	</td>
 <table >
 
