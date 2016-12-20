@@ -6,7 +6,7 @@
 	$database = "eventos";
 	$table = "eventos";
 
-	$mysqli;
+	$mysqli = new mysqli($hostname, $username, $password) or die(".....");
 	$conexion;
 	
 	/**
@@ -24,14 +24,17 @@
 	*/
 	function conectar(){
 		global $mysqli, $username, $password, $hostname, $database, $table;
-
-		$mysqli = new mysqli($hostname, $username, $password) or die(".....");
+		
+		$db_selected = mysqli_select_db($mysqli, $database);
 
 		$conn;
-		if($mysqli -> query("CREATE DATABASE if not exists ".$database)){
-			echo "Creando bdd";
+		if(!$db_selected){
+			$create = "CREATE DATABASE IF NOT EXISTS $database";
+			$mysqli -> query($create);
+
 			$conn = mysqli_connect($hostname, $username, $password, $database);
 			mysqli_select_db($mysqli, $database);
+
 			$crear = "CREATE TABLE eventos(
 						Artista VARCHAR(255) NOT NULL,
 						Fecha VARCHAR(100) NOT NULL,
@@ -56,10 +59,10 @@
 			insertar($conn, "admins", array("Modelado", "12345"));
 		}
 		else {
-			echo"Ya existe bdd";
 			$conn = mysqli_connect($hostname, $username, $password, $database);
 			mysqli_select_db($mysqli, $database);
 		}
+
 		return $conn;
 	}
 
