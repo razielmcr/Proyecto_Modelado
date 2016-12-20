@@ -116,7 +116,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <a href="compra.php">
-  <img src="yosemite.jpg" style="width:100%">
+  <img src="../bootstrap/yosemite.jpg" style="width:100%">
   </a>
   <div class="text" style="color:RED;">Haz click para comprar boletos.</div>
 </div>

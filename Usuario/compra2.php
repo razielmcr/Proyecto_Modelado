@@ -38,9 +38,9 @@
 			<tr>
 			<p>Elija seccion: </p>
 			<select name="seccion">
-				<option value="p">Seccion Premium (Amarillo)</option>
-				<option value="e">Seccion Estandar (Verde) </option>
-				<option value="d">Seccion Discapacitados (Azul) </option>
+				<option value="p">Seccion Premium (Amarillo)  <?php $m = rand(700,1000); echo "<p>Precio: $m </p>";?></option>
+				<option value="e">Seccion Estandar (Verde) <?php $m = rand(500,700); echo "<p>Precio: $m </p>";?> </option>
+				<option value="d">Seccion Discapacitados (Azul)  <?php $m = rand(600,700); echo "<p>Precio: $m </p>";?> </option>
 			</select>
 			</tr>
 		</td>
