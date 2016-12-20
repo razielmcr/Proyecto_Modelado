@@ -19,6 +19,9 @@
 ?>
 <div> 
 <form method = 'post' action = 'compra3.php'>
+<table>
+	<td>
+		
 	<table>
 		<td>
 			<tr>
@@ -35,9 +38,9 @@
 			<tr>
 			<p>Elija seccion: </p>
 			<select name="seccion">
-				<option value="p">Seccion Premium</option>
-				<option value="e">Seccion Estandar</option>
-				<option value="d">Seccion Discapacitados</option>
+				<option value="p">Seccion Premium (Amarillo)</option>
+				<option value="e">Seccion Estandar (Verde) </option>
+				<option value="d">Seccion Discapacitados (Azul) </option>
 			</select>
 			</tr>
 		</td>
@@ -72,6 +75,13 @@
 		</td>
 </div>
 	</table>
+	</td>
+	<td>
+		<img src="Imagenes/lugar.jpg" alt="Mapa del evento" width="600" height="400" >
+
+	</td>
+<table >
+
 <input type="submit" value="Comprar boleto.">
 </form>
 </body>
