@@ -6,7 +6,7 @@
 	$database = "eventos";
 	$table = "eventos";
 
-	$mysqli = new mysqli($hostname, $username, $password) or die(".....");
+	$mysqli;
 	$conexion;
 	
 	/**
@@ -14,7 +14,7 @@
 	* @param   La conexion que queremos eliminar.
 	*/
 	function deskonekte($conexion){
-		mysqli_close($conexion);
+		return mysqli_close($conexion);
 	}
 
 	/**
@@ -25,6 +25,7 @@
 	function conectar(){
 		global $mysqli, $username, $password, $hostname, $database, $table;
 		
+		$mysqli = new mysqli($hostname, $username, $password) or die(".....");
 		$db_selected = mysqli_select_db($mysqli, $database);
 
 		$conn;
@@ -121,9 +122,11 @@
 	* @param $array      Arreglo asociativo que contiene como llave las columnas a editar
 	* 					    y como valor el elemento nuevo para reemplazar.
 	* 						Ver archivo Administrador/alterarevento.php para ejemplo.
+	* @param $columna    String con el nombre de la columna del identificador.
+	* @param $id 		 Identificador, string efrente a lo que se busca.
 	* @return 			 Regresa la consulta obtenida.
 	*/
-	function actualizar($conexion, $tabla, $array, $id_evento){
+	function actualizar($conexion, $tabla, $array, $columna, $id){
 		$consulta= "UPDATE $tabla SET";
 		$c = 0;
 		foreach($array as $key => $value){
@@ -135,7 +138,7 @@
 			$c++;
 		}
 
-		$consulta = $consulta." WHERE ID_evento='$id_evento'";
+		$consulta = $consulta." WHERE $columna='$id'";
 		return $conexion -> query($consulta);
 	}
 
