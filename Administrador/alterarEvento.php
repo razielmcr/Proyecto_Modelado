@@ -14,8 +14,8 @@
 	$array = array("Artista" => $artista, "Fecha" => $fecha, "Premium" => $premium, 
 		             "Estandar" => $estandar, "Discapacitados" => $discapacitados, 
 		             "ID_evento" => "a82163", "Imagen" => "Prueba2.jpg", "Precio" => 500);
-		
-	$result = actualizar($conexion, $table, $array, $idProvisional);
+	$columna = "ID_evento";
+	$result = actualizar($conexion, $table, $array, $columna, $idProvisional);
 
 	if($result){
 		header("Location:cambioExitoso.html");
