@@ -1,15 +1,15 @@
 header {
-	background: #37474F;
+	background: #D00000;
 	color: #fff;
 }
 
 article {
-	background: #FFFFFF;
+	background:#FFF;
 	background-size: cover;
 }
 
 aside {
-	background: #FF7043;
+	background: #FFBA08;
 	color: #212121;
 }
 
@@ -27,7 +27,7 @@ table, th, td {
 }
 
 .azul {
-	background: #37474F;
+	background: #136F63;
 	color: #fff;
 }
 
@@ -39,3 +39,4 @@ table, th, td {
 	min-width: 240px;
 	max-width: 240px;
 }
+
