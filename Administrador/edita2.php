@@ -1,22 +1,22 @@
 <?php
 
 	$id=$_POST["primero"];
-	echo "El Evento elegido cuenta con estos datos: " .$id;
-	$user="root";
-	$pass="pass";
-	$server="localhost";
-	$db="eventos";
+	echo "El Evento elegido cuenta con estos datos: " . $id;
+	
+	include("../Conexion/Conexion.php");
+	$conexion = conectar();
 
-	$link = mysql_connect($server,$user,$pass); 
-	mysql_select_db($db, $link);
-	$consulta= "SELECT * FROM eventos WHERE id_evento = '$id'";
-	$result = mysql_query($consulta, $link);
-	while ($row = mysql_fetch_array($result)) {
+	$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
+	while ($row = $result -> fetch_assoc()) {
 		$artista=$row["Artista"];
 		$date=$row["Fecha"];
-		$prem=$row["premium"];
-		$esta=$row["estandar"];
-		$disca=$row["discapacitados"];
+		$prem=$row["Premium"];
+		$esta=$row["Estandar"];
+		$disca=$row["Discapacitados"];
+		$precioP = $row["PrecioP"];
+		$precioE = $row["PrecioE"];
+		$precioD = $row["PrecioD"];
+		$link = $row["Imagen"];
 	}
 
 ?>
@@ -31,7 +31,14 @@
 	
 <table>
 		<tr>
-			<td>Id evento <input type="text" name="idA" value=<?php echo $id; ?> > </td>
+			<select name="idA">
+				<option value="<?php echo $id ;?>">ID Evento: <?php echo $id ;?></option>
+			</select>
+		</tr>
+		<tr>
+			<select name="artista">
+				<option value="<?php echo $artista ;?>">Artista Evento: <?php echo $artista ;?></option>
+			</select>
 		</tr>
 		<tr>
 			<td>Cambio de Fecha: <input type="date" name="fecha" value=<?php echo $date; ?>> </td>
@@ -45,7 +52,18 @@
 		<tr>
 			<td>Numero de boletos disponibles para venta en Zona de Discapacitados: <input type="text" name="disca" value=<?php echo $disca; ?>> <label class='asterisco'>3 </label></td>
 		</tr>
-
+		<tr>
+			<td>Precio de boletos en Zona Premium:  <input type="text" name="precioP" value=<?php echo $precioP; ?>></td>
+		</tr>
+		<tr>
+			<td>Precio de boletos en Zona Estandar:  <input type="text" name="precioE" value=<?php echo $precioE; ?>></td>
+		</tr>
+		<tr>
+			<td>Precio de boletos en Zona Discapacitados:  <input type="text" name="precioD" value=<?php echo $precioD; ?>></td>
+		</tr>
+		<tr>
+			<td>Link Youtube:  <input type="text" name="link" value=<?php echo $link; ?>></td>
+		</tr>
 		<tr><td><input type="submit" value="Editar"></td></tr>
 	</table>
 </form>

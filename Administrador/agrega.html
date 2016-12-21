@@ -5,16 +5,19 @@
 <body>
 <form method = 'post' action = 'agrega.php'>
 <center><a href="menuAdmin.php">MENU PRINCIPAL</a></center>
+	
 <table>
-		<tr>
-		<td> <a href="agrega.html">Agrega evento |</a> </td>
-		<td><a href="verEventos.html">Ver eventos |</a> </td>
-		<td><a href="edita.php">Editar evento |</a> </td>
-		<td><a href="asientos.html">Edita asientos |</a> </td>
-		<td><a href="eliminarEvento.php">Elimina evento |</a> </td>
-		</tr>
-	</table>
-	<p>Agrega evento</p>
+	<tr>
+	<td> <a href="agrega.html">Agrega evento |</a> </td>
+	<td><a href="verEventos.html">Ver eventos |</a> </td>
+	<td><a href="edita.php">Editar evento |</a> </td>
+	<td><a href="asientos.html">Edita asientos |</a> </td>
+	<td><a href="eliminarEvento.php">Elimina evento |</a> </td>
+	</tr>
+</table>
+<p>Agrega evento</p>
+<table>
+<td>
 	<table>
 		<tr>
 			<td>Artista a presentar: <input type="text" name="artista"></td>
@@ -31,14 +34,27 @@
 		<tr>
 			<td>Numero de boletos disponibles para venta en Zona de Discapacitados: <input type="text" name="disca"> <label class='asterisco'>3 </label></td>
 		</tr>
-
 		<tr>
 			<td>Link de video de YouTube para el evento: <input type="text" name="link"></td>
 		</tr>
 		<tr><td><input type="submit" value="Agregar"></td></tr>
 	</table>
-	<p id = "aclaraciones">1: Maximo 150 <br> 2: Maximo 300 <br> 3: Maximo: 15</br> 
-</p>
+</td>
+<td>
+	<table>
+		<tr>
+			<td>Precio de boletos en Zona Premium:  <input type="text" name="precioP"></td>
+		</tr>
+		<tr>
+			<td>Precio de boletos en Zona Estandar:  <input type="text" name="precioE"></td>
+		</tr>
+		<tr>
+			<td>Precio de boletos en Zona Discapacitados:  <input type="text" name="precioD"></td>
+		</tr>
+	</table>
+</td>	
+</table>
+<p id = "aclaraciones">1: Maximo 150 <br> 2: Maximo 300 <br> 3: Maximo: 15</br></p>
 </form>
 </body>
 </html>

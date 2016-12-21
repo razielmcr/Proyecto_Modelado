@@ -44,7 +44,9 @@
 						Discapacitados INT NOT NULL,
 						ID_evento VARCHAR(255) NOT NULL,
 						Imagen VARCHAR(255) NOT NULL, 
-						Precio DECIMAL(30) NOT NULL)";
+						PrecioP DECIMAL(30) NOT NULL,
+						PrecioE DECIMAL(30) NOT NULL,
+						PrecioD DECIMAL(30) NOT NULL)";
 			mysqli_query($conn, $crear);
 
 			$crear = "CREATE TABLE asientos(

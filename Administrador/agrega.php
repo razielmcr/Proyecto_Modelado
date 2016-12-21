@@ -11,8 +11,11 @@
 	$disca = (int)$_POST['disca'];
 	$idevento = "a" . (string)rand(1,100000);
 	$link = $_POST['link'];
+	$precioP = $_POST['precioP'];
+	$precioE = $_POST['precioE'];
+	$precioD = $_POST['precioD'];
 
-	$elementos = array($artista, $fecha, $prem, $estandar, $disca, $idevento, $link, 1000);
+	$elementos = array($artista, $fecha, $prem, $estandar, $disca, $idevento, $link, $precioP, $precioE, $precioD);
 	
 	if(verificaCampos($elementos)){
 		if($prem > 150 || $estandar > 300 || $disca > 15){
