@@ -54,7 +54,7 @@
 					<table style="border: 10px">
 						<tr>
 							<td>
-								<select class="form-control" name="primero">
+								<select class="select2-choices form-control" name="primero">
 									<?php
 										include("../Conexion/Conexion.php");
 										$conexion = conectar(); 

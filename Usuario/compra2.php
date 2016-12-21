@@ -77,10 +77,15 @@
 									<td>
 										<tr>
 											<p>Evento: </p>
-											<select class="select2-choices"name="evento">
+											<select class="select2-choices" name="evento">
 												<?php
-												$evento = $_POST["primero"];
-												echo "<option value='$evento'>Evento: $evento</option>";
+													// include("../Conexion/Conexion.php");
+													// $conexion = conectar();
+
+													$evento = $_POST["primero"];
+													// $busqueda = buscar($conexion, "*", "eventos", "ID_evento", $id_evento);
+													// $evento = $busqueda['Artista'];
+													echo "<option value='$evento'>Evento: $evento</option>";
 												?>
 											</select>
 										</tr>
@@ -88,10 +93,10 @@
 									<td>
 										<tr>
 											<p>Elija seccion: </p>
-											<select class="select2-choices"name="seccion">
-												<option value="p">Seccion Premium (Amarillo)  <?php echo "<p>Precio: $precioP </p>";?></option>
-												<option value="e">Seccion Estandar (Verde) <?php  echo "<p>Precio: $precioE </p>";?> </option>
-												<option value="d">Seccion Discapacitados (Azul)  <?php  echo "<p>Precio: $precioD </p>";?> </option>
+											<select class="select2-choices" name="seccion">
+												<option value="Premiun">Seccion Premium (Amarillo)  <?php echo "<p>Precio: $precioP </p>";?></option>
+												<option value="Estandar">Seccion Estandar (Verde) <?php  echo "<p>Precio: $precioE </p>";?> </option>
+												<option value="Discapacitados">Seccion Discapacitados (Azul)  <?php  echo "<p>Precio: $precioD </p>";?> </option>
 											</select>
 										</tr>
 									</td>
@@ -115,7 +120,7 @@
 									<td>
 										<tr>
 											<p>Elija asiento: </p>
-											<select class="select2-choices" name = "asiento">
+											<select class="select2-choices" name="asiento">
 												<?php 
 													for ($i=1; $i <= 15; $i++) { 
 														echo "<option value='$i'>Asiento: $i</option>"; 
