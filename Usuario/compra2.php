@@ -14,6 +14,7 @@
 
 	while ($row = $result -> fetch_assoc()) {
 		$im = $row["Artista"];
+		$link = $row["Imagen"];
 		echo "<p>Selecciona tu boleto del evento de $im </p>" ;
 	}
 ?>
@@ -79,6 +80,10 @@
 	<td>
 		<img src="Imagenes/lugar.jpg" alt="Mapa del evento" width="600" height="400" >
 		<p>¿Necesita comprar su boleto fisicamente? <a href="mapa.html"> Ubique la taquilla mas cercana aqui.</a></p>
+	</td>
+	<td>
+	<?php $linkEmb =  str_replace("watch?v=","embed/",$link); ?>
+		<iframe width="420" height="315" src="<?php echo " $linkEmb "; ?>"> </iframe>
 	</td>
 <table >
 

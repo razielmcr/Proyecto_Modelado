@@ -10,8 +10,9 @@
 	$estandar = (int)$_POST['estan'];
 	$disca = (int)$_POST['disca'];
 	$idevento = "a" . (string)rand(1,100000);
+	$link = $_POST['link'];
 
-	$elementos = array($artista, $fecha, $prem, $estandar, $disca, $idevento, "Prueba.jpg", 1000);
+	$elementos = array($artista, $fecha, $prem, $estandar, $disca, $idevento, $link, 1000);
 	
 	if(verificaCampos($elementos)){
 		if($prem > 150 || $estandar > 300 || $disca > 15){
