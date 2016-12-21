@@ -13,8 +13,7 @@
 	$array = array($id_evento, $compra);
 	
 	#Parte para verificar compra.
-
-	$mysqli = new mysqli("localhost", "root", "pass", "eventos");
+	// $mysqli = new mysqli("localhost", "root", "pass", "eventos");
 	$result2 = $mysqli->query("SELECT Compra FROM asientos WHERE ID_evento = '$id_evento' and Compra = '$compra'");
 	if ($result2->num_rows == 0) {
 		$result	= insertar($conexion, $table, $array);

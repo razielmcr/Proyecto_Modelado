@@ -1,6 +1,6 @@
 <?php
 
-	require_once("Conexion.php");
+	require_once("../Conexion/Conexion.php");
 
 	class TestUnit extends PHPUnit_Framework_TestCase{
 

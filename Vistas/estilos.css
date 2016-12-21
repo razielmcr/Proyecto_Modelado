@@ -1,0 +1,41 @@
+header {
+	background: #37474F;
+	color: #fff;
+}
+
+article {
+	background: #FFFFFF;
+	background-size: cover;
+}
+
+aside {
+	background: #FF7043;
+	color: #212121;
+}
+
+a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+a:hover{
+	color: orange;
+}
+
+table, th, td {
+		padding: 10px;
+}
+
+.azul {
+	background: #37474F;
+	color: #fff;
+}
+
+.imagen {
+	border: 10 px;
+}
+
+.select2-choices {
+	min-width: 240px;
+	max-width: 240px;
+}
