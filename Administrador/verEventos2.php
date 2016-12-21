@@ -20,15 +20,11 @@
 	}
 
 ?>
-
 <html>
 <head>
-	<title>Edita evento</title>
+	<title>Ver Eventos</title>
 </head>
 <body>
-<center>
-<form method="POST" action="alterarEvento.php">
-	
 <table>
 		<tr>
 			<select name="idA">
@@ -64,11 +60,8 @@
 		<tr>
 			<td>Link Youtube:  <input type="text" name="link" value=<?php echo $link; ?>></td>
 		</tr>
-		<tr><td><input type="submit" value="Editar"></td></tr>
 	</table>
-</form>
-</center>
-	<p id = "aclaraciones">1: Maximo 150 <br> 2: Maximo 300 <br> 3: Maximo: 15</br> 
+	<a href="edita.php">Para editar este evento click aqui</a>
+
 </body>
 </html>
-
