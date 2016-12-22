@@ -94,7 +94,7 @@
 										<tr>
 											<p>Elija seccion: </p>
 											<select class="select2-choices" name="seccion">
-												<option value="Premiun">Seccion Premium (Amarillo)  <?php echo "<p>Precio: $precioP </p>";?></option>
+												<option value="Premium">Seccion Premium (Amarillo)  <?php echo "<p>Precio: $precioP </p>";?></option>
 												<option value="Estandar">Seccion Estandar (Verde) <?php  echo "<p>Precio: $precioE </p>";?> </option>
 												<option value="Discapacitados">Seccion Discapacitados (Azul)  <?php  echo "<p>Precio: $precioD </p>";?> </option>
 											</select>

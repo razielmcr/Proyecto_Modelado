@@ -9,6 +9,7 @@
 	$asiento = $_POST["asiento"];
 	$compra = $seccion . ",". $fila."," . $asiento;
 
+
 	$array = array($id_evento, $compra);
 		
 	#Parte para verificar compra.
@@ -16,6 +17,8 @@
 	if ($result2->num_rows == 0) {
 		$asientos = $mysqli -> query("SELECT * FROM eventos WHERE ID_evento = '$id_evento'");
 		$row = $asientos -> fetch_assoc();
+		echo $row[$seccion];
+		echo "Numero de asientos disp en $seccion: ";
 		if ($row[$seccion] > 0){
 			insertar($conexion, $table, $array);
 			echo $seccion;
