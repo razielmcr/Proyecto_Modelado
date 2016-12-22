@@ -114,7 +114,7 @@
 	*/
 	public function testDesconectar(){
 		$this->conn = deskonekte($this->conn);
-		$this -> assertTrue($this->conn == false);
+		$this -> assertTrue($this->conn == null);
 
 	}
 
