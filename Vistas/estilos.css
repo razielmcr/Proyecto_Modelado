@@ -19,11 +19,15 @@ a {
 }
 
 a:hover{
-	color: orange;
+	color: #1DE9B6;
 }
 
 table, th, td {
 		padding: 10px;
+}
+
+.aviso{
+	font-size: 14 px;
 }
 
 .azul {

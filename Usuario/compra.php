@@ -21,6 +21,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
+
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
@@ -41,6 +42,7 @@
 		</div>
 	</header>
 
+	<br>
 	<div class="container">
 		<section class="main row">
 			<article class="col-xsm-12 col-sm-7 col-md-9">
@@ -54,7 +56,7 @@
 					<table style="border: 10px">
 						<tr>
 							<td>
-								<select class="select2-choices form-control" name="primero">
+								<select class="select2-choices" name="primero">
 									<?php
 										include("../Conexion/Conexion.php");
 										$conexion = conectar(); 

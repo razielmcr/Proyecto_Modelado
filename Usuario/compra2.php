@@ -35,17 +35,19 @@
 					$im = $row["Artista"];
 					$link = $row["Imagen"];
 					$precioP = $row["PrecioP"];
- 					$precioE = $row["PrecioE"];
- 					$precioD = $row["PrecioD"];
+						$precioE = $row["PrecioE"];
+						$precioD = $row["PrecioD"];
 					echo "<h3>Selecciona tu boleto del evento de $im </h3>" ;
 
 				}
 				echo "<h5><a href=\"index.html\">Lugar, CDMX</a></h5>"
 			?>
 		</div>
-	</header>
-	<br>
 
+	</header>
+
+
+	<br>
 	<div class="container">
 		<section class="main row">
 			<article  class="col-xsm-12 col-sm-7 col-md-9">
