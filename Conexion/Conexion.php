@@ -14,7 +14,8 @@
 	* @param   La conexion que queremos eliminar.
 	*/
 	function deskonekte($conexion){
-		return mysqli_close($conexion);
+		$conexion = null;
+		return $conexion;
 	}
 
 	/**
@@ -154,7 +155,6 @@
 	*/
 	function eliminar($conexion, $tabla, $id, $columna){
 		$id_nuevo = (gettype($id) == "string") ? "'$id'" : $id;
-		echo $id_nuevo;
 		$consulta = "DELETE FROM $tabla WHERE $columna=$id_nuevo";
 		$consulta2 = "DELETE FROM asientos WHERE $columna=$id_nuevo";
 		$conexion -> query($consulta2);
