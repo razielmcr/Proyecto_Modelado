@@ -52,7 +52,7 @@
 		}
 
 		function editarAsientos(){
-			alert("Falta Editar asientos");
+			$('#mostrador').load('editaDisponibilidad.php');
 		}
 
 	</script>
