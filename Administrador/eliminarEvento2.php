@@ -7,7 +7,7 @@
 
 	$result = eliminar($conexion, $table, $id, "ID_evento");
 	if($result){
-		header("Location:cambioExitoso.html");
+		echo "Cambio exitoso.";
 	}
 	else{
 		echo "<h1>No se ha podido eliminar el evento.</h1>";

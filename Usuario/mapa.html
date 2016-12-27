@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mapa de taquilla.</title>
+	<title>Mapa de Taquilla</title>
+	<meta charset="UTF-8">
+
+	<!-- Siempre agregar este viewport -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-scale=1.0">
+
+	<!--	B O O T S T R A P -->	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../Vistas/estilos.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+	
+	<!-- imports para barra <select>-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 </head>
 <body>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.0008815531169!2d-99.17779863751538!3d19.455490797382158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f897dab6d0cb%3A0x4f63bba9a0d7aec5!2sMar+Mediterr%C3%A1neo+193%2C+Popotla%2C+11400+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1482214628514" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>Mapa de la taquilla. </iframe>
+
+	<header>
+		<div class="container">
+		<div class='btn-toolbar pull-right'>
+			<form action="index.html">
+				<div class='btn-group'>
+	  				<button type='submit' class='btn btn-link' onClick="logueo();" style="color:white;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Administrador</button>
+				 </div>
+			</form>
+  		</div>
+			<h3><a href="index.html">Lugar</a></h3>
+			<h5>Taquilla</h5>
+		</div>
+	</header>
+	<br>
+	<div class="container">
+		<section class="main row">
+			<article class="col-xsm-12 col-sm-7 col-md-9">
+				<center>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.0008815531169!2d-99.17779863751538!3d19.455490797382158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f897dab6d0cb%3A0x4f63bba9a0d7aec5!2sMar+Mediterr%C3%A1neo+193%2C+Popotla%2C+11400+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1482214628514" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>Mapa de la taquilla. </iframe>
+				</center>
+			</article>
+			<aside class="col-xsm-12 col-sm-5 col-md-3">
+				<center>
+					<h3>Taquilla</h3>
+					<h5>Horarios</h5>
+					<table>
+						<tr>
+							<td>Lun - Vie</td>
+							<td> 10 a.m. - 18 p.m.</td>
+							<br>
+						</tr>
+						<tr>
+							<td>Sáb - Dom</td>
+							<td> 11 a.m. - 16 p.m.</td>
+						</tr>
+					</table>
+					<br>
+					<h5>Mar Mediterráneo 193, Popotla, 11400 <br>Ciudad de México, CDMX</h5>
+					<br>
+					<h5><a href="compra.php">Comprar boletos en línea</a></h5>
+				</center>
+			</aside>
+		</section>
+
+	</div>
 
 </body>
 </html>

@@ -37,7 +37,14 @@
 
 	<header>
 		<div class="container">
-			<h3>ELIGE TU EVENTO PREFERIDO.</h3>
+			<div class='btn-toolbar pull-right'>
+				<form action="../Administrador/Logueo.php">
+					<div class='btn-group'>
+	  					<button type='submit' class='btn btn-link' onClick="logueo();" style="color:white;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Administrador</button>
+					 </div>
+				</form>
+  			</div>
+			<h3><a href="index.html" style="color: white; text-decoration: none">Lugar</a></h3>
 			<h5><a href="index.html" style="color: white; text-decoration: none">Lugar, CDMX</a></h5>
 		</div>
 	</header>
@@ -52,7 +59,10 @@
 			</article>
 
 			<aside class="col-xsm-12 col-sm-5 col-md-3">
-				<form method = 'post' action = 'compra2.php'>
+				<center>
+					<h3>Eventos disponibles</h3>
+				</center>
+				<form method = 'get' action = 'compra2.php'>
 					<table style="border: 10px">
 						<tr>
 							<td>

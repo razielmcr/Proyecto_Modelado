@@ -55,6 +55,13 @@
 <body>
 	<header>
 		<div class="container">
+			<div class='btn-toolbar pull-right'>
+				<form action="../Administrador/Logueo.php">
+					<div class='btn-group'>
+	  					<button type='submit' class='btn btn-link' onClick="logueo();" style="color:white;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Administrador</button>
+					 </div>
+				</form>
+  			</div>
 			<h1>Lugar</h1>
 			<a href="index.html">Lugar, CDMX</a>
 		</div>
@@ -72,7 +79,7 @@
  			<aside class="col-xsm-12 col-sm-5 col-md-3">
 				<center>
 					<?php
-						$link = "<a href=\"compra.php\">";
+						$link = "<a href=\"compra2.php?primero=$id_evento\">";
 						if($comprado){
 							$datos = buscar($conexion, "*", "eventos", "ID_evento", $id_evento);
 							$row = $datos -> fetch_assoc();
@@ -99,7 +106,7 @@
 				 			echo "$link <br>Seguir comprando</a>";
 						}
 						else{
-							echo "<h3>Oooops!</h3><br>$mensaje<br>$link Intentar nuevamente</a>";
+							echo "<h3>Oooops!</h3><br>$mensaje<br>$link Intentar con otro boleto</a>";
 						}
 					?> 				
 				</center>

@@ -23,24 +23,32 @@
 <body>
 	<header>
 		<div class="container">
+			<div class='btn-toolbar pull-right'>
+				<form action="../Administrador/Logueo.php">
+					<div class='btn-group'>
+	  					<button type='submit' class='btn btn-link' onClick="logueo();" style="color:white;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Administrador</button>
+					 </div>
+				</form>
+  			</div>
 			<?php 
 
 				include("../Conexion/Conexion.php");
 				$conexion = conectar();
 
-				$id = $_POST["primero"];
+				$id = $_GET["primero"];
 				$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
+				$numBoletos = 0;
 
 				while ($row = $result -> fetch_assoc()) {
 					$im = $row["Artista"];
 					$link = $row["Imagen"];
 					$precioP = $row["PrecioP"];
-						$precioE = $row["PrecioE"];
-						$precioD = $row["PrecioD"];
-					echo "<h3>Selecciona tu boleto del evento de $im </h3>" ;
-
+					$precioE = $row["PrecioE"];
+					$precioD = $row["PrecioD"];
+					$numBoletos = $row["Premium"] + $row["Estandar"] + $row["Discapacitados"];
 				}
-				echo "<h5><a href=\"index.html\">Lugar, CDMX</a></h5>"
+				echo "<h3><a href=\"index.html\">Lugar</a></h3>";
+				echo "<h5>Venta de boletos</h5>";
 			?>
 		</div>
 
@@ -72,6 +80,12 @@
 
 			<aside class="col-xsm-12 col-sm-5 col-md-3">
 				<div> 
+					<?php 
+						$mensaje = ($numBoletos == 1) ? "boleto disponible" : "boletos disponibles";
+						echo   "<center><h3>$im</h3>
+									    <h5>$numBoletos $mensaje</h5>
+								</center>"; 
+						?>
 					<form method = 'post' action = 'compra3.php'>
 						<table>
 							<td>
@@ -81,13 +95,10 @@
 											<p>Evento: </p>
 											<select class="select2-choices" name="evento">
 												<?php
-													// include("../Conexion/Conexion.php");
-													// $conexion = conectar();
-
-													$evento = $_POST["primero"];
-													// $busqueda = buscar($conexion, "*", "eventos", "ID_evento", $id_evento);
-													// $evento = $busqueda['Artista'];
-													echo "<option value='$evento'>Evento: $evento</option>";
+													$busqueda = buscar($conexion, "*", "eventos", "ID_evento", $id);
+													$row = $busqueda -> fetch_assoc();
+													$evento = $row['Artista'];
+													echo "<option value='$id'>Evento: $evento</option>";
 												?>
 											</select>
 										</tr>

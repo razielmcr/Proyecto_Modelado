@@ -1,45 +1,60 @@
-
 <html>
 <head>
 	<title>Eliminar evento</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+
+
 </head>
 <body>
-<center><a href="menuAdmin.php">MENU PRINCIPAL</a></center>
-<table>
-		<tr>
-		<td> <a href="agrega.html">Agrega evento |</a> </td>
-		<td><a href="ver.php">Ver eventos |</a> </td>
-		<td><a href="edita.php">Editar evento |</a> </td>
-		<td><a href="asientos.html">Edita asientos |</a> </td>
-		<td><a href="eliminarEvento.php">Elimina evento |</a> </td>
-		</tr>
-	</table>
-	<p>Elimina evento.</p>
-<form method = 'post' action = 'eliminarEvento2.php'>
-	<table>
-	<tr>
-		<td>
-		<select name="borrar">
+
+	<center>
 		<?php
-			include("../Conexion/Conexion.php");
-			$conexion = conectar();
+			if(isset($_GET['submit'])){
+				echo $_GET['borrar'];
+				echo "Hey";
+			}
+			else{
+				echo "Hola";
+				?>
+				<form method="get" action="#">
+				<table>
+					<tr>
+						<td>
+							<select class="select2-choices" name="borrar">
+								<?php
+									include("../Conexion/Conexion.php");
+									$conexion = conectar();
 
-			$result = getTabla($conexion, "*", $table);
-			while ($row = $result -> fetch_assoc()) {
-				$id = $row["ID_evento"];
-				$artista = $row["Artista"];
-				$fecha = $row["Fecha"];
+									$result = getTabla($conexion, "*", $table);
+									while ($row = $result -> fetch_assoc()) {
+										$id = $row["ID_evento"];
+										$artista = $row["Artista"];
+										$fecha = $row["Fecha"];
 
-				echo "<option value='$id'>$artista - $fecha</option>";
+										echo "<option value='$id'>$artista - $fecha</option>";
+									}
+								?>
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<center>
+								<input type="submit" name="submit" class="btn btn-default">
+							</center>
+						</td>
+					</tr>
+
+				</table>
+				</form>
+				<?php
 			}
 
+
 		?>
-		</select>
-		</td>
-	</tr>
-		<tr><td><input type="submit" value="Eliminar"></td></tr>
-	</table>
-</form>
+	</center>
 
 </body>
 </html>

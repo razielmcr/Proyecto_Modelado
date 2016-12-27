@@ -1,60 +1,133 @@
 <html>
 <head>
 	<title>Agrega evento</title>
-</head>
-<body>
-<form method = 'post' action = 'agrega.php'>
-<center><a href="menuAdmin.php">MENU PRINCIPAL</a></center>
+
+	<meta charset="UTF-8">
+
+	<!-- Siempre agregar este viewport -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="../Vistas/estilos.css">
+
+	<!--	B O O T S T R A P -->	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 	
-<table>
-	<tr>
-	<td> <a href="agrega.html">Agrega evento |</a> </td>
-	<td><a href="verEventos.php">Ver eventos |</a> </td>
-	<td><a href="edita.php">Editar evento |</a> </td>
-	<td><a href="asientos.html">Edita asientos |</a> </td>
-	<td><a href="eliminarEvento.php">Elimina evento |</a> </td>
-	</tr>
-</table>
-<p>Agrega evento</p>
-<table>
-<td>
-	<table>
-		<tr>
-			<td>Artista a presentar: <input type="text" name="artista"></td>
-		</tr>
-		<tr>
-			<td>Fecha: <input type="date" name="fecha"> </label></td>
-		</tr>
-		<tr>
-			<td>Numero de boletos disponibles para venta en Zona Premium:  <input type="text" name="prem"><label class='asterisco'>1 </label></td>
-		</tr>
-		<tr>
-			<td>Numero de boletos disponibles para venta en Zona Estandar: <input type="text" name="estan"> <label class='asterisco'>2 </label></td>
-		</tr>
-		<tr>
-			<td>Numero de boletos disponibles para venta en Zona de Discapacitados: <input type="text" name="disca"> <label class='asterisco'>3 </label></td>
-		</tr>
-		<tr>
-			<td>Link de video de YouTube para el evento: <input type="text" name="link"></td>
-		</tr>
-		<tr><td><input type="submit" value="Agregar"></td></tr>
-	</table>
-</td>
-<td>
-	<table>
-		<tr>
-			<td>Precio de boletos en Zona Premium:  <input type="text" name="precioP"></td>
-		</tr>
-		<tr>
-			<td>Precio de boletos en Zona Estandar:  <input type="text" name="precioE"></td>
-		</tr>
-		<tr>
-			<td>Precio de boletos en Zona Discapacitados:  <input type="text" name="precioD"></td>
-		</tr>
-	</table>
-</td>	
-</table>
-<p id = "aclaraciones">1: Maximo 150 <br> 2: Maximo 300 <br> 3: Maximo: 15</br></p>
-</form>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
+</head>
+
+<body>
+	<center><h3>Nuevo Evento</h3></center>
+	<br>
+	<form method = 'post' action = 'agrega.php'>
+		<table cellspacing="100">
+		<td>
+			<table>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-20">
+							<span class="input-group-addon">Artista</span>
+			   				<input type="text" class="form-control" name="artista" placeholder="Evento a presentar">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+							<span class="input-group-addon">Fecha</span>
+			   				<input type="date" class="form-control" name="fecha">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Premium</span>
+			   				<input type="text" class="form-control" name="prem" placeholder="Máximo 150 boletos">
+			  			</div>
+			  			<br>
+					</td>
+				
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Estandar</span>
+			   				<input type="text" class="form-control" name="estan" placeholder="Máximo 300 boletos">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Discapacitados</span>
+			   				<input type="text" class="form-control" name="disca" placeholder="Máximo 10 boletos">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Zelda</span>
+			   				<input type="text" class="form-control" name="link" placeholder="Link para video de Youtube">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<br><br><br>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Premium</span>
+			   				<input type="text" class="form-control" name="precioP" placeholder="Precio de boletos">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Estandar</span>
+			   				<input type="text" class="form-control" name="precioE" placeholder="Precio de boletos">
+			  			</div>
+			  			<br>
+
+					</td>
+				</tr>
+				<tr>
+
+					<td>
+						<div class="input-group input-group-sm col-xs-10">
+			    			<span class="input-group-addon">Discapacitados</span>
+			   				<input type="text" class="form-control" name="precioD" placeholder="Precio de boletos">
+			  			</div>
+			  			<br>
+					</td>
+				</tr>
+			</table>
+		</td>	
+		</table>
+		<center>
+			<input type="submit" class="btn btn-primary" value="Agregar">
+		</center>
+	</form>
 </body>
 </html>

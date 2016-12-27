@@ -26,6 +26,10 @@ table, th, td {
 		padding: 10px;
 }
 
+.barra{
+	color: #FFF;
+}
+
 .aviso{
 	font-size: 14 px;
 }
