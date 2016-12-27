@@ -21,6 +21,15 @@
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
 	<script>
+		// $(window).load(function(){
+		// 	$("#video").load("video.php");
+		// });
+
+		function mostrarVideo(){
+			var link = document.getElementById('selector').value;
+			var linkEmb = link.replace("watch?v=", "embed/");
+			document.getElementById('mostradorVideo').innerHTML = "<iframe width='275' height='260' src='" + linkEmb + "'</iframe>";
+		}
 
 		function inicio(){
 			$('#mostrador').html("<center><img src='../Vistas/Imagenes/rose2.jpg'/></center>");
@@ -93,26 +102,38 @@
 			</article>
 
 			<aside class="col-xsm-12 col-sm-5 col-md-3">
-				<div class="cotainer">
-					<center>
-						<h5 style=>Disfruta mientras haces tus bisnes (Aun no se como hacer que jale xdd)</h5>
-						<select class="select2-choices" name="video">
-							<?php
-								include("../Conexion/Conexion.php");
-								$table = "eventos";
-								$conexion = conectar();
+				<center>
+					<div id="contenedor">
+						<form method="get" name="video" action="#">
+							<center>
+								<h5 style=>Disfruta mientras haces tus bisnes (Aun no se como hacer que jale xdd)</h5>
+								<select class="select2-choices" id="selector" name="video">
+									<?php
+										include("../Conexion/Conexion.php");
+										$table = "eventos";
+										$conexion = conectar();
 
-								$busqueda = getTabla($conexion, "*", $table);
-								while($row = $busqueda -> fetch_assoc()) {
-									$evento = $row['Artista'];
-									$link = $row['Imagen'];
-									echo "<option value='$link'>Artista: $evento</option>";
-								}
-							?>
-						</select>
-					</center>
-				</div>
+										$busqueda = getTabla($conexion, "*", $table);
+										while($row = $busqueda -> fetch_assoc()) {
+											$evento = $row['Artista'];
+											$link = $row['Imagen'];
+											echo "<option value='$link'>Artista: $evento</option>";
+										}
+									?>
+								</select>
+								<br>
+								<input type="button" onClick="mostrarVideo();" class="btn btn-primary" value="Play">
+							</center>
+
+						</form>
+						<div id="mostradorVideo">
+							
+						</div>
+					</div>
+				</center>
+				<br>
 			</aside>
+
 		</section>
 	</div>
 
