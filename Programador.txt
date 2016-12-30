@@ -1,0 +1,11 @@
+Rol: Palmerin Morales David Gabriel
+De las solicitudes del cliente se cumplio con prcticamente todas, a excepcion de una, que detallo mas adelante.
+La parte del administrador se cumplio enteremente y ademas se agregaron vistas y funcionalidad como poder reproducir una cancion de los artistas mientras se esta administrando el sitio. El login ok, y cada una de las funciones del admin tambien.
+
+En la parte de la compra por parte del usuario, hubo un inconveniente y no se agrego el tiempo de confirmacion pero,
+el cliente estuvo de acuerdo que se sustituyera por un video que saldra al hacer la compra del boleto y que el administrador eligir.
+
+Al final  hubo complicaciones con las vistas pero se logro solucionar,
+Se agrego un slider de eventos disponibles tambien.
+
+Y todo cambio es guardado localmente en la database eventos.
