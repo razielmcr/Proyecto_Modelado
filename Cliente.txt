@@ -1,1 +1,17 @@
-Una pagina que para el administrador de mi sitio le sea posible acceder, a partir de ahi ver, agregar eventos, editar informacion del mismo, ver disponibilidad de asientos, cambiar boletos de vendido a libre, eliminar un evento.
+Rol: Almanza Ibarra Raziel
+El cliente solicita una pagina que sea la que se encargue de vender los boletos de un lugar de evetnos, principalmente conciertos, debe estar enfocada en conciertos, debe incluir varios requerimientos como por ejemplo:  
+Que para el administrador del sitio le sea posible acceder con un login necesario,y que ya dentro del sistema le sea posible:
+-Agregar eventos con la informacion requerida como:
+	Nombre del evento,y que se puedan agregar precios.
+-Editar eventos:
+	Que el administrador pueda editar toda la información de un evento previamente guaradado.
+-Ver eventos;
+	Que el administrador pueda ver la informacion de boletos disponbiles, fechas o cualquier otra info de un evento guardado. 
+-Eliminar evento.
+
+Cada evento debe tener 3 tipos de boletos y estos ademas deben su precio único, una fecha y un ID. 
+
+Cabe mencionar que no se debe poder sobrevender el evento, (comprar boletos anque no haya disponibilidad) ni tampoco comprar el mismo asiento dos veces.
+
+Como usuario éste debe poder comprar un boleto de la sección elegida, con mensajes de confirmación si hubo error en la compra y especificar por qué. Debe poder ver el mapa para solicitar el boleto y también debe haber una pantalla de confirmación donde se avise que el usuario tiene un tiempo donde se reserve el boleto elgido.
+ 
