@@ -24,7 +24,6 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
 
 	<script type="text/javascript">
-
 		function agregar(){
 			var artista = document.getElementById('artista').value;
 			var fecha   = document.getElementById('fecha').value;
@@ -35,10 +34,12 @@
 			var precioP = document.getElementById('precioP').value;
 			var precioE = document.getElementById('precioE').value;
 			var precioD = document.getElementById('precioD').value;
+			
 			$.ajax({
 				type:'POST',
 				url: 'agrega.php',
 				dataType: 'html',
+				cache: false,
 				data:{
 					'artista' : artista,
 					'fecha' : fecha,
@@ -60,7 +61,6 @@
 		}
 
 	</script>
-
 </head>
 
 <body>
@@ -174,5 +174,6 @@
 		</center>
 	</form>
 	<br>
+
 </body>
 </html>

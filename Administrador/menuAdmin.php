@@ -27,32 +27,32 @@
 			document.getElementById('mostradorVideo').innerHTML = "<iframe width='275' height='260' src='" + linkEmb + "'</iframe>";
 		}
 
-		function inicio(){
+		function inicioAdmin(){
 			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').html("<center><img src='../Vistas/Imagenes/rose2.jpg'/></center>");
 		}
 
-		function agregar(){
+		function agregarAdmin(){
 			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').load("agrega.html")
 		}
 
-		function mostrar(){
+		function mostrarAdmin(){
 			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').load("verEventos.php")
 		}
 
-		function editar(){
+		function editarAdmin(){
 			document.getElementById('mostrador').innerHTML = "";			
 			$('#mostrador').load('edita.php');
 		}
 
-		function eliminar(){
+		function eliminarAdmin(){
 			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').load('eliminarEvento.php');
 		}
 
-		function editarAsientos(){
+		function editarAsientosAdmin(){
 			document.getElementById('mostrador').innerHTML = "";
 			alert("Falta Editar asientos");
 		}
@@ -80,13 +80,13 @@
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav">
 										<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-										<li><a href="javascript:void(0)" onclick="inicio();"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+										<li><a href="javascript:void(0)" onclick="inicioAdmin();"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
 											</a></li>
-		        						<li><a href="javascript:void(0)" onclick="agregar();">Agregar Evento</a></li>
-		        						<li><a href="javascript:void(0)" onclick="mostrar();">Ver Eventos</a></li>
-		        						<li><a href="javascript:void(0)" onclick="editar();">Editar Evento</a></li>
-		        						<li><a href="javascript:void(0)" onclick="editarAsientos();">Editar Asientos</a></li>
-		        						<li><a href="javascript:void(0)" onclick="eliminar();">Elimina Evento</a></li>
+		        						<li><a href="javascript:void(0)" onclick="agregarAdmin();">Agregar Evento</a></li>
+		        						<li><a href="javascript:void(0)" onclick="mostrarAdmin();">Ver Eventos</a></li>
+		        						<li><a href="javascript:void(0)" onclick="editarAdmin();">Editar Evento</a></li>
+		        						<li><a href="javascript:void(0)" onclick="editarAsientosAdmin();">Editar Asientos</a></li>
+		        						<li><a href="javascript:void(0)" onclick="eliminarAdmin();">Elimina Evento</a></li>
 		        						<li><a href="../Usuario/index.html">Salir</a></li>
 									</ul>
 								</div>

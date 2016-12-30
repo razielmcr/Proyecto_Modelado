@@ -53,15 +53,14 @@
 					'precioD' : precioD,
 				},
 				success: function(html){
-					document.getElementById('head').innerHTML = html;
-				// 	document.getElementById('head').innerHTML = "<div class='alert alert-success alert-dismissable'><a href='menuAdmin.php'" + 
-				// 												" class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>" + 
-				// 												"Aviso!</strong><br>" +  html + "</div>";	
-				// }
+					// document.getElementById('head').innerHTML = html;
+					document.getElementById('head').innerHTML = "<div class='alert alert-success alert-dismissable'><a href='menuAdmin.php'" + 
+																" class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>" + 
+																"Aviso!</strong><br>" +  "</div>";
+				
 				}
 			});
 			return false;
-			alert("hola");
 		}
 
 	</script>
@@ -69,9 +68,9 @@
 </head>
 <body>
 
-	<head id='head'>
+	<header id="head">
 
-	</head>
+	</header>
 
 	<center>
 		<form>
