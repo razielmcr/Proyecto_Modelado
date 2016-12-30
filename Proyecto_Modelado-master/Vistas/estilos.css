@@ -1,0 +1,50 @@
+header {
+	background: #D00000;
+	color: #fff;
+}
+
+article {
+	background:#FFF;
+	background-size: cover;
+}
+
+aside {
+	background: #FFBA08;
+	color: #212121;
+}
+
+a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+a:hover{
+	color: #1DE9B6;
+}
+
+table, th, td {
+		padding: 10px;
+}
+
+.barra{
+	color: #FFF;
+}
+
+.aviso{
+	font-size: 14 px;
+}
+
+.azul {
+	background: #136F63;
+	color: #fff;
+}
+
+.imagen {
+	border: 10 px;
+}
+
+.select2-choices {
+	min-width: 240px;
+	max-width: 240px;
+}
+
