@@ -25,15 +25,14 @@
 			$result = insertar($conexion, $table, $elementos);
 
 			if($result){
-				echo "<p>Concierto de $artista agregado, con: <br>$prem boletos Premium, <br> $estandar boletos estandar. <br> $disca boletos para discapacitados con id: $idevento. </p>";
+				echo "<p>Concierto agegado: $artista <br> ID: $idevento <br>Boletos Premium: $prem <br> Boletos Estandar: $estandar <br> Boletos Discapacitados: $disca </p>";
 			}else{
-				echo "<p>No se ha podido agregar, rifate Palmerin</p>";
+				echo "<p>No se ha podido agregar.</p>";
 			}
 		}
 	}
 	else{
-		echo "<h1> Llenar todos los campos.</h1>";
-		echo "<a href=\"agrega.html\">Volver</a>";
+		echo "Llenar todos los campos.";
 	}
 
 

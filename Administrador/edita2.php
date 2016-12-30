@@ -1,74 +1,157 @@
-<?php
-
-	$id=$_POST["primero"];
-	echo "El Evento elegido cuenta con estos datos: " . $id;
-	
-	include("../Conexion/Conexion.php");
-	$conexion = conectar();
-
-	$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
-	while ($row = $result -> fetch_assoc()) {
-		$artista=$row["Artista"];
-		$date=$row["Fecha"];
-		$prem=$row["Premium"];
-		$esta=$row["Estandar"];
-		$disca=$row["Discapacitados"];
-		$precioP = $row["PrecioP"];
-		$precioE = $row["PrecioE"];
-		$precioD = $row["PrecioD"];
-		$link = $row["Imagen"];
-	}
-
-?>
-
 <html>
 <head>
 	<title>Edita evento</title>
+	<meta charset="UTF-8">
+
+	<!-- Siempre agregar este viewport -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="../Vistas/estilos.css">
+
+	<!--	B O O T S T R A P -->	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
+
+
+
 </head>
 <body>
-<center>
-<form method="POST" action="alterarEvento.php">
-	
-<table>
-		<tr>
-			<select name="idA">
-				<option value="<?php echo $id ;?>">ID Evento: <?php echo $id ;?></option>
-			</select>
-		</tr>
-		<tr>
-			<select name="artista">
-				<option value="<?php echo $artista ;?>">Artista Evento: <?php echo $artista ;?></option>
-			</select>
-		</tr>
-		<tr>
-			<td>Cambio de Fecha: <input type="date" name="fecha" value=<?php echo $date; ?>> </td>
-		</tr>
-		<tr>
-			<td>Numero de boletos disponibles para venta en Zona Premium:  <input type="text" name="prem" value=<?php echo $prem; ?>><label class='asterisco'>1 </label> </td>
-		</tr>
-		<tr>
-			<td>Numero de boletos disponibles para venta en Zona Estandar: <input type="text" name="estan" value=<?php echo $esta; ?>> <label class='asterisco'>2 </label></td>
-		</tr>
-		<tr>
-			<td>Numero de boletos disponibles para venta en Zona de Discapacitados: <input type="text" name="disca" value=<?php echo $disca; ?>> <label class='asterisco'>3 </label></td>
-		</tr>
-		<tr>
-			<td>Precio de boletos en Zona Premium:  <input type="text" name="precioP" value=<?php echo $precioP; ?>></td>
-		</tr>
-		<tr>
-			<td>Precio de boletos en Zona Estandar:  <input type="text" name="precioE" value=<?php echo $precioE; ?>></td>
-		</tr>
-		<tr>
-			<td>Precio de boletos en Zona Discapacitados:  <input type="text" name="precioD" value=<?php echo $precioD; ?>></td>
-		</tr>
-		<tr>
-			<td>Link Youtube:  <input type="text" name="link" value=<?php echo $link; ?>></td>
-		</tr>
-		<tr><td><input type="submit" value="Editar"></td></tr>
-	</table>
-</form>
-</center>
-	<p id = "aclaraciones">1: Maximo 150 <br> 2: Maximo 300 <br> 3: Maximo: 15</br> 
+	<?php
+
+		include("../Conexion/Conexion.php");
+		$conexion = conectar();
+
+		$id = $_POST["selector"];
+		$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
+		$row = $result -> fetch_assoc();
+
+		$artista = $row["Artista"];
+		$date    = $row["Fecha"];
+		$prem    = $row["Premium"];
+		$esta    = $row["Estandar"];
+		$disca   = $row["Discapacitados"];
+		$precioP = $row["PrecioP"];
+		$precioE = $row["PrecioE"];
+		$precioD = $row["PrecioD"];
+		$link    = $row["Imagen"];
+
+		echo "
+			<center><h3>Evento<h3></center><br>
+			<table>
+				<td>
+					<table>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-20'>
+									<span class='input-group-addon'>Artista</span>
+					   				<input type='text' class='form-control' id='artista' value='$artista'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+									<span class='input-group-addon'>Fecha</span>
+					   				<input type='date' class='form-control' id='fecha' value='$date'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Premium</span>
+					   				<input type='text' class='form-control' id='prem' value='$prem' placeholder='Máximo 150 boletos'>
+					  			</div>
+					  			<br>
+							</td>
+						
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Estandar</span>
+					   				<input type='text' class='form-control' id='estan' value='$esta' placeholder='Máximo 300 boletos'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Discapacitados</span>
+					   				<input type='text' class='form-control' id='disca' value='$disca' placeholder='Máximo 15 boletos'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Zelda</span>
+					   				<input type='text' class='form-control' id='link' value='$link' placeholder='Link para video de Youtube'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+									<span class='input-group-addon'>ID</span>
+					   				<input type='text' class='form-control' id='idA' value=$id placeholder=$id>
+					  			</div>
+					  			<br></b>
+					  		</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Premium</span>
+					   				<input type='text' class='form-control' id='precioP' value='$precioP' placeholder='Precio de boletos'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Estandar</span>
+					   				<input type='text' class='form-control' id='precioE' value='$precioE' placeholder='Precio de boletos'>
+					  			</div>
+					  			<br>
+
+							</td>
+						</tr>
+						<tr>
+
+							<td>
+								<div class='input-group input-group-sm col-xs-10'>
+					    			<span class='input-group-addon'>Discapacitados</span>
+					   				<input type='text' class='form-control' id='precioD' value=$precioD placeholder='Precio de boletos'>
+					  			</div>
+					  			<br>
+							</td>
+						</tr>
+					</table>
+				</td>	
+				</table>
+				<button id='boton' class='btn btn-primary' onClick='editar();'>Aceptar</button>";
+		?>
 </body>
 </html>
 

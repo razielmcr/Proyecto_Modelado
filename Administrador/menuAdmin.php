@@ -21,10 +21,6 @@
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
 	<script>
-		// $(window).load(function(){
-		// 	$("#video").load("video.php");
-		// });
-
 		function mostrarVideo(){
 			var link = document.getElementById('selector').value;
 			var linkEmb = link.replace("watch?v=", "embed/");
@@ -32,27 +28,33 @@
 		}
 
 		function inicio(){
+			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').html("<center><img src='../Vistas/Imagenes/rose2.jpg'/></center>");
 		}
 
 		function agregar(){
+			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').load("agrega.html")
 		}
 
 		function mostrar(){
+			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').load("verEventos.php")
 		}
 
 		function editar(){
+			document.getElementById('mostrador').innerHTML = "";			
 			$('#mostrador').load('edita.php');
 		}
 
 		function eliminar(){
+			document.getElementById('mostrador').innerHTML = "";
 			$('#mostrador').load('eliminarEvento.php');
 		}
 
 		function editarAsientos(){
-			$('#mostrador').load('editaDisponibilidad.php');
+			document.getElementById('mostrador').innerHTML = "";
+			alert("Falta Editar asientos");
 		}
 
 	</script>

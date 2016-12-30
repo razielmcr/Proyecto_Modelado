@@ -2,14 +2,36 @@
 <html>
 <head>
 	<title>Ver eventos</title>
+
+	<script type="text/javascript">
+		function mostrarFormulario(){
+			var id = document.getElementById('selector').value;
+
+			$.ajax({
+				type: 'POST',
+				url: 'verEventos2.php',
+				dataType: 'html',
+				data:{
+					'selector' : id,
+				},
+				success: function(html){
+					$('#mostrador').html(html);
+				}
+
+
+			})
+		}
+
+	</script>
+
 </head>
 <body>
 	<center>
-		<form method = 'post' action = 'verEventos2.php'>
+		<form>
 			<table>
 			<tr>
 				<td>
-					<select name="primero">
+					<select id="selector">
 					<?php
 					
 						include("../Conexion/Conexion.php");
@@ -30,12 +52,17 @@
 			<tr>
 				<td>
 					<center>
-						<input type="submit" class="btn btn-default" value="Seleccionar evento">
+						<input type="button" onClick="mostrarFormulario();" class="btn btn-primary" value="Seleccionar evento">
 					</center>
 				</td>
 			</tr>
 			</table>
 		</form>
 	</center>
+
+	<div id="mostrador">
+
+	</div>
+
 </body>
 </html>
