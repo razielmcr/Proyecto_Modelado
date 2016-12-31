@@ -9,11 +9,13 @@
 	$prem           = (int) $_POST['prem'];
 	$estandar       = (int) $_POST['estan'];
 	$discapacitados = (int) $_POST['disca'];
-	$idevento       = $_POST['idA'];
 	$link           = $_POST['link'];
+	$idevento       = $_POST['idA'];
 	$precioP        = $_POST['precioP'];
 	$precioE        = $_POST['precioE'];
 	$precioD        = $_POST['precioD'];
+
+	echo $idevento."id";
 
 	$array = array("Artista" => $artista, "Fecha" => $fecha, "Premium" => $prem, 
 		             "Estandar" => $estandar, "Discapacitados" => $discapacitados, 

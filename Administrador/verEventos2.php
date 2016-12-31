@@ -1,3 +1,9 @@
+<html>
+<head>
+	<title>Ver Eventos</title>
+
+</head>
+<body>
 <?php
 
 	include("../Conexion/Conexion.php");
@@ -17,35 +23,6 @@
 	$precioD = $row["PrecioD"];
 	$link    = $row["Imagen"];
 
-?>
-<html>
-<head>
-	<title>Ver Eventos</title>
-
-	<meta charset="UTF-8">
-
-	<!-- Siempre agregar este viewport -->
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="../Vistas/estilos.css">
-
-	<!--	B O O T S T R A P -->	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
-
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
-
-</head>
-<body>
-<?php
 	echo "
 		<center><h3>Evento</h3></center><br>
 		<table>

@@ -4,67 +4,12 @@
 
 	<meta charset="UTF-8">
 
-	<!-- Siempre agregar este viewport -->
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-scale=1.0">
+	<script src="vistas.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="../Vistas/estilos.css">
-
-	<!--	B O O T S T R A P -->	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
-
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
-
-	<script type="text/javascript">
-		function agregar(){
-			var artista = document.getElementById('artista').value;
-			var fecha   = document.getElementById('fecha').value;
-			var prem    = document.getElementById('prem').value;
-			var estan   = document.getElementById('estan').value;
-			var disca   = document.getElementById('disca').value;
-			var link    = document.getElementById('link').value;
-			var precioP = document.getElementById('precioP').value;
-			var precioE = document.getElementById('precioE').value;
-			var precioD = document.getElementById('precioD').value;
-			
-			$.ajax({
-				type:'POST',
-				url: 'agrega.php',
-				dataType: 'html',
-				cache: false,
-				data:{
-					'artista' : artista,
-					'fecha' : fecha,
-					'prem' : prem,
-					'estan' : estan,
-					'disca' : disca,
-					'link' : link,
-					'precioP' : precioP,
-					'precioE' : precioE,
-					'precioD' : precioD,
-				},
-				success: function(html){
-					document.getElementById('head').innerHTML = "<div class='alert alert-success alert-dismissable'><a href='menuAdmin.php'" + 
-																" class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>" + 
-																"Aviso!</strong><br>" +  html + "</div>";
-				}
-			});
-			return false;
-		}
-
-	</script>
 </head>
 
 <body>
-	<header id="head">
+	<header id="header">
 
 	</header>
 
@@ -134,7 +79,7 @@
 		<td>
 			<table>
 				<tr>
-					<br><br><br>
+					<p id='idA'></p><br><br><br>
 				</tr>
 				<tr>
 					<td>
@@ -169,7 +114,7 @@
 		</td>	
 		</table>
 		<center>
-			<input type="button" onClick="agregar();" class="btn btn-primary" value="Agregar">
+			<input type="button" onClick='editar("agrega.php"); actualizarSelector();' class="btn btn-primary" value="Agregar">
 		
 		</center>
 	</form>

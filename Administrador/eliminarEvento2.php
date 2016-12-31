@@ -3,7 +3,7 @@
 	include("../Conexion/Conexion.php");
 	$conexion = conectar();
 
-	$id = $_POST["borrar"];
+	$id = $_POST["target"];
 
 	$result = eliminar($conexion, $table, $id, "ID_evento");
 	if($result && $id != ""){

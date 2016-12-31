@@ -4,23 +4,7 @@
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
 
-	<script type="text/javascript">
-		function mostrarEliminado(){
-			var id = document.getElementById('borrar').value;
-			$.ajax({
-			    type: 'POST',
-			    url: 'eliminarEvento2.php',
-			    dataType: 'html',
-			    data: {
-			        'borrar' : id,
-			    },
-			    success:function(html){
-			    	$('#contenedor').html(html);
-			    }
-			});
-			return false;
-		}
-	</script>
+	<script src='vistas.js'></script>
 
 </head>
 <body>
@@ -30,7 +14,7 @@
 		<table>
 			<tr>
 				<td>
-					<select class="select2-choices" name="borrar" id="borrar">
+					<select class="select2-choices" name="target" id="target">
 						<?php
 							include("../Conexion/Conexion.php");
 							$conexion = conectar();
@@ -51,7 +35,7 @@
 			<tr>
 				<td>
 					<center>
-						<input type="button" onClick="mostrarEliminado();" class="btn btn-default" value="Eliminar">
+						<input type="button" onClick='eventoConId("target","eliminarEvento2.php", "#contenedor");' class="btn btn-primary" value="Eliminar">
 					</center>
 				</td>
 			</tr>

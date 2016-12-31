@@ -4,6 +4,7 @@
 	include("../Conexion/Conexion.php");
 	$conexion = conectar();	
 
+	$idevento = $_POST['idA'];
 	$artista = $_POST['artista'];
 	$fecha = $_POST['fecha'];
 	$prem = (int)$_POST['prem'];
