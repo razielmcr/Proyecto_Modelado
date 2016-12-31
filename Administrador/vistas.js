@@ -1,40 +1,67 @@
+/*
+Funcion en javascript para mostrar video en un contenedor.
+*/
 function mostrarVideo(){
 	var link = document.getElementById('selector').value;
 	var linkEmb = link.replace("watch?v=", "embed/");
 	document.getElementById('mostradorVideo').innerHTML = "<iframe width='275' height='260' src='" + linkEmb + "'</iframe>";
 }
 
+/*
+	Actualiza el selector de videos, por lo que cuando agregan un evento,
+	automaticamente se añade éste a la lista de videos disponibles.
+*/
 function actualizarSelector(){
 	var val = document.getElementById('#inner');
 	alert(val);
 	$('#inner').load('selectorVideo.php');
 }
 
+/*
+	Coloca una imagen en un contenedor.
+*/
 function inicioAdmin(){
 	document.getElementById('mostrador').innerHTML = "";
 	$('#mostrador').html("<center><img src='../Vistas/Imagenes/rose2.jpg'/></center>");
 }
 
+/*
+	Carga el archivo agrega.html dentro de un contenedor indicado.
+*/
 function agregarAdmin(){
 	document.getElementById('mostrador').innerHTML = "";
 	$('#mostrador').load("agrega.html");
 }
 
+/*
+	Carga el archivo verEventos.php dentro de un contenedor indicado.
+*/
 function mostrarAdmin(){
 	document.getElementById('mostrador').innerHTML = "";
 	$('#mostrador').load("verEventos.php");
 }
 
+/*
+	Carga el archivo edita.php dentro de un contenedor indicado.
+*/
 function editarAdmin(){
 	document.getElementById('mostrador').innerHTML = "";			
 	$('#mostrador').load('edita.php');
 }
 
+/*
+	Carga el archivo eliminarEvento.php dentro de un contenedor indicado.
+*/
 function eliminarAdmin(){
 	document.getElementById('mostrador').innerHTML = "";
 	$('#mostrador').load('eliminarEvento.php');
 }
 
+/*
+	Se usa para editar o agregar un evento, se usa ajax para mandar los datos
+	recopilados en el html al archivo .php indicado; de esta manera, evitamos
+	actualizar la pagina.
+*/
 function editar(destino){
 	var artista = document.getElementById('artista').value;
 	var fecha   = document.getElementById('fecha').value;
@@ -72,6 +99,10 @@ function editar(destino){
 	return false;
 }
 
+/*
+	Funcion para mostrar contenido que solo necesita del id, como editarEvento
+	o eliminarEvento.
+*/
 function eventoConId(id, destino, contenedor){
 	var valor = document.getElementById(id).value;
 
