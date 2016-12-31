@@ -52,10 +52,10 @@
 											&nbsp;&nbsp;&nbsp;</li>
 										<li><a href="javascript:void(0)" onclick="inicioAdmin();"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
 											</a></li>
-		        						<li><a href="javascript:void(0)" onclick="agregarAdmin();">Agregar Evento</a></li>
-		        						<li><a href="javascript:void(0)" onclick="mostrarAdmin();">Ver Eventos</a></li>
-		        						<li><a href="javascript:void(0)" onclick="editarAdmin();">Editar Evento</a></li>
-		        						<li><a href="javascript:void(0)" onclick="eliminarAdmin();">Elimina Evento</a></li>
+		        						<li><a href="javascript:void(0)" onclick='cargar("agrega.html");'>Agregar Evento</a></li>
+		        						<li><a href="javascript:void(0)" onclick='cargar("verEventos.php");'>Ver Eventos</a></li>
+		        						<li><a href="javascript:void(0)" onclick='cargar("edita.php");'>Editar Evento</a></li>
+		        						<li><a href="javascript:void(0)" onclick='cargar("eliminarEvento.php");'>Elimina Evento</a></li>
 		        						<li><a href="../Usuario/index.html">Salir</a></li>
 									</ul>
 								</div>

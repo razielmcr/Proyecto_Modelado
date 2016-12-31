@@ -8,12 +8,19 @@ function mostrarVideo(){
 }
 
 /*
+	Funcion para cargar archivos dentro de un contenedor.
+*/
+function cargar(archivo){
+	document.getElementById('mostrador').innerHTML = "";
+	$('#mostrador').load(archivo);
+}
+
+/*
 	Actualiza el selector de videos, por lo que cuando agregan un evento,
 	automaticamente se añade éste a la lista de videos disponibles.
 */
-function actualizarSelector(){
-	var val = document.getElementById('#inner');
-	alert(val);
+function actualizarSelectorVideo(){
+	document.getElementById('inner').innerHTML = "";
 	$('#inner').load('selectorVideo.php');
 }
 
@@ -26,35 +33,10 @@ function inicioAdmin(){
 }
 
 /*
-	Carga el archivo agrega.html dentro de un contenedor indicado.
+	Funcion para quitar elementos algun contenedor.
 */
-function agregarAdmin(){
-	document.getElementById('mostrador').innerHTML = "";
-	$('#mostrador').load("agrega.html");
-}
-
-/*
-	Carga el archivo verEventos.php dentro de un contenedor indicado.
-*/
-function mostrarAdmin(){
-	document.getElementById('mostrador').innerHTML = "";
-	$('#mostrador').load("verEventos.php");
-}
-
-/*
-	Carga el archivo edita.php dentro de un contenedor indicado.
-*/
-function editarAdmin(){
-	document.getElementById('mostrador').innerHTML = "";			
-	$('#mostrador').load('edita.php');
-}
-
-/*
-	Carga el archivo eliminarEvento.php dentro de un contenedor indicado.
-*/
-function eliminarAdmin(){
-	document.getElementById('mostrador').innerHTML = "";
-	$('#mostrador').load('eliminarEvento.php');
+function quitarContenido(contenedor){
+	document.getElementById(contenedor).innerHTML = "";
 }
 
 /*
@@ -90,8 +72,8 @@ function editar(destino){
 			'precioD' : precioD,
 		},
 		success: function(html){
-			document.getElementById('header').innerHTML = "<div class='alert alert-success alert-dismissable'><a href='menuAdmin.php'" + 
-														" class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>" + 
+			document.getElementById('header').innerHTML = "<div class='alert alert-success alert-dismissable'><button" + 
+														" onClick='quitarContenido(\"header\");' class='close' data-dismiss='alert' aria-label='close'>&times;</button><strong>" + 
 														"¡ Aviso !</strong><br>" + html +  "</div>";
 		
 		}

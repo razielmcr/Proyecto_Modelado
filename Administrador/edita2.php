@@ -10,7 +10,6 @@
 		$conexion = conectar();
 
 		$id = $_POST["target"];
-		echo $id;
 		$result = buscar($conexion, "*", "eventos", "ID_evento", $id);
 		$row = $result -> fetch_assoc();
 

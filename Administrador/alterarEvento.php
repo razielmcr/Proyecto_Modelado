@@ -15,8 +15,6 @@
 	$precioE        = $_POST['precioE'];
 	$precioD        = $_POST['precioD'];
 
-	echo $idevento."id";
-
 	$array = array("Artista" => $artista, "Fecha" => $fecha, "Premium" => $prem, 
 		             "Estandar" => $estandar, "Discapacitados" => $discapacitados, 
 		             "ID_evento" => $idevento, "Imagen" => $link, "PrecioP" => $precioP,

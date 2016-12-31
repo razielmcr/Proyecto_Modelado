@@ -35,7 +35,7 @@
 			<tr>
 				<td>
 					<center>
-						<input type="button" onClick='eventoConId("target","eliminarEvento2.php", "#contenedor");' class="btn btn-primary" value="Eliminar">
+						<input type="button" onClick='eventoConId("target","eliminarEvento2.php", "#contenedor"); actualizarSelectorVideo();' class="btn btn-primary" value="Eliminar">
 					</center>
 				</td>
 			</tr>

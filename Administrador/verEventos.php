@@ -52,7 +52,7 @@
 			<tr>
 				<td>
 					<center>
-						<input type="button" onClick="mostrarFormulario();" class="btn btn-primary" value="Seleccionar evento">
+						<input type="button" onClick="mostrarFormulario();" class="btn btn-primary" value="Ver evento">
 					</center>
 				</td>
 			</tr>

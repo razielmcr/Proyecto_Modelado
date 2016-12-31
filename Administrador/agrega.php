@@ -23,13 +23,15 @@
 			echo "Has excedido el numero maximo de boletos a vender en alguna seccion.";
 		}else{
 
-			$result = insertar($conexion, $table, $elementos);
+			if(verificaFecha($fecha)){
+				$result = insertar($conexion, $table, $elementos);
 
-			if($result){
-				echo "<p>Concierto agegado: $artista <br> ID: $idevento <br>Boletos Premium: $prem <br> Boletos Estandar: $estandar <br> Boletos Discapacitados: $disca </p>";
-			}else{
-				echo "<p>No se ha podido agregar.</p>";
+				if($result){
+					echo "<p>Concierto agegado: $artista <br> ID: $idevento <br>Boletos Premium: $prem <br> Boletos Estandar: $estandar <br> Boletos Discapacitados: $disca </p>";
+				}
+				else echo "<p>No se ha podido agregar.</p>";
 			}
+			else echo "No es posible escoger la fecha ".$fecha;
 		}
 	}
 	else{
@@ -52,6 +54,29 @@
 		}
 		return True;
 	}
+
+	/**
+	* Verifica la fecha recibida con la fecha actual.
+	* @param $fecha   La fecha que se comprara con la actual.
+	* @return True    En caso de que la fecha recibida sea menor a la 
+	*				          fecha actual.
+	* @return False   En caso contrario.
+	*/
+	function verificaFecha($fecha){
+		$año = substr($fecha, 0, 4);
+		$mes = substr($fecha, 5, 2);
+		$dia = substr($fecha, 8, 2);
+		$hoy = getdate();
+
+		if($hoy['year'] < $año)
+			return true;
+		if($hoy['mon'] < $mes)
+			return true;
+		if($hoy['mday'] < $dia)
+			return true;
+
+		return false;
+	}	
 
 ?>
 
