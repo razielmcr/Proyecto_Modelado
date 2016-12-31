@@ -1,4 +1,13 @@
 # Proyecto_Modelado
+INTEGRANTES:
+	Almanza Ibarra Raziel
+	Palmerin Morales David Gabriel
+
+INSTRUCCIONES:
+	La contraseña de del usuario root debe ser "pass" para la correcta conexión.
+	El clone del Git debe hacerse en la carpeta /var/www/html/ y para su ejecución, 
+	debe abrir la ruta: http://localhost/Proyecto_Modelado/Usuario/
+	
 Parte de patrones de diseño:
 Recuerdo:
 	Se utilizó para poder almancenar el estado de cada uno de los eventos que se cearon al usar la página y sobre todo
