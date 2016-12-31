@@ -40,6 +40,34 @@ function quitarContenido(contenedor){
 }
 
 /*
+	Funcion que manda usuario y contraseña al archivo valida.php para 
+	verificar el inicio de sesion.
+*/
+function iniciarSesion(){
+	var user = document.getElementById('user').value;
+	var pass = document.getElementById('password').value;
+	$.ajax({
+		type: 'POST',
+		url: 'valida.php',
+		dataType: 'html',
+		data:{
+			'user' : user,
+			'password' : pass,
+		},
+		success: function(html){
+			var result = $.trim(html);
+			if(result === 'Failure'){
+				document.getElementById('aviso').innerHTML = "<div class='alert alert-success alert-dismissable'><button" + 
+														" onClick='quitarContenido(\"aviso\");' class='close' data-dismiss='alert' aria-label='close'>&times;</button><strong><center>" + 
+														"¡ Aviso !</strong><br>No es posible iniciar sesión.</center></div>";
+			}
+			else window.location.replace('menuAdmin.php?usuarioValido');
+		}
+	});
+	return false;
+}
+
+/*
 	Se usa para editar o agregar un evento, se usa ajax para mandar los datos
 	recopilados en el html al archivo .php indicado; de esta manera, evitamos
 	actualizar la pagina.

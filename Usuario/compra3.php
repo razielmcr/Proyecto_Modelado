@@ -62,8 +62,8 @@
 					 </div>
 				</form>
   			</div>
-			<h1>Lugar</h1>
-			<a href="index.html">Lugar, CDMX</a>
+			<a href="index.html"><h3><strong>Foro Concierto</strong></h3></a>
+			<h5>Boletos</h5>
 		</div>
  	</header>
 

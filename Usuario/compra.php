@@ -44,8 +44,8 @@
 					 </div>
 				</form>
   			</div>
-			<h3><a href="index.html" style="color: white; text-decoration: none">Lugar</a></h3>
-			<h5><a href="index.html" style="color: white; text-decoration: none">Lugar, CDMX</a></h5>
+			<h3><a href="index.html" style="color: white; text-decoration: none">Foro Concierto</a></h3>
+			<h5>Boletos</h5>
 		</div>
 	</header>
 

@@ -24,6 +24,10 @@
 
 	<script>
 		$(window).load(function(){
+			var url = window.location.search;
+			if(url !== "?usuarioValido"){
+				window.location.replace("Logueo.php");
+			}
 			$('#inner').load('selectorVideo.php');
 		});
 	</script>
@@ -33,7 +37,7 @@
 <body>
 	<header>
 		<div class="container">
-			<h1>Lugar</h1>
+			<a href="../Usuario/index.html" style="color:white; text-decoration:none;"><h3>Foro Concierto</h3></a>
 			<h5>Ciudad de México</h5>
 		</div>
 	</header>

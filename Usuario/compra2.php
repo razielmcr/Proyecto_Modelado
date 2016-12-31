@@ -47,7 +47,7 @@
 					$precioD = $row["PrecioD"];
 					$numBoletos = $row["Premium"] + $row["Estandar"] + $row["Discapacitados"];
 				}
-				echo "<h3><a href=\"index.html\">Lugar</a></h3>";
+				echo "<h3><a href=\"index.html\"><strong>Foro Concierto</strong></a></h3>";
 				echo "<h5>Venta de boletos</h5>";
 			?>
 		</div>

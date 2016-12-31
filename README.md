@@ -1,14 +1,21 @@
 # Proyecto_Modelado
 INTEGRANTES:
 	Almanza Ibarra Raziel
+
 	Palmerin Morales David Gabriel
 
 INSTRUCCIONES:
-	- El archivo raíz es ~/Usuario/index.html , es la vista inicial del Proyecto.
+	- Contar con conexión a internet para uso de bootstrap y javascript.
+
+	- El archivo raíz es Usuario/index.html , es la vista inicial del Proyecto.
+
 	- En mySQL la contraseña de del usuario "root" debe ser "pass" para la correcta conexión en el archivo ~/Conexion/Conexion.php. En caso de tener usuario y contraseña distinto para mySQL, se puede modificar en este mismo archivo las variables:  $username y $password.
+
 	- Al igual, es muy importante que el usuario no cuente con una base de datos llamada 'eventos' ya que el archivo Conexion.php 
 verifica que no exista una para crearla e inicializar todo correctamente para el uso del proyecto;de lo contrario, usuará esta base de datos que ya tiene el usuario y no podrá hacerse el uso correcto.
+
 	- El clone del Git debe hacerse en la carpeta /var/www/html/ y para su ejecucion, debe abrir la ruta: http://localhost/Proyecto_Modelado/Usuario/
+
 	- Se incluye CRUD para la modificacion y creación de eventos. El acceso a esta opción esta protegida por un Inicio de Sesión, el cual es:
 Usuario: Modelado Contraseña: 12345
 
