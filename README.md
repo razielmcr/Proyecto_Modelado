@@ -1,5 +1,6 @@
 # Proyecto_Modelado
 INTEGRANTES:
+	
 	Almanza Ibarra Raziel
 
 	Palmerin Morales David Gabriel
@@ -42,3 +43,9 @@ Prototype:
 	Para la creación de multplies conexiones a la base de datos, se estableció un archivo Conexión donde esté se encarga de crear una conexión y regresarla sin estar cada vez creando una individalmente. Se usa un modelo ya dado para la creacion de conexiones a las dbs.
 
 
+PRUEBAS UNITARIAS:
+
+La prueba unitaria es Test/TestUnit.php
+Se ejecuta en terminal en la carpeta Test con el comando:
+	phpunit TestUnit.php
+Evalúa que el archivo Conexion/Conexion.php ingrese elementos en una base de datos llamada eventos.

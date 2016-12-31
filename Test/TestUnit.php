@@ -108,6 +108,12 @@
 		$this -> assertTrue($result->num_rows == 0);
 	}	
 
+	public function testCargaBD(){
+		$admin = getTabla($this->conn, "*", "admins");
+		$eventos = getTabla($this->conn, "*", "eventos");
+		$this -> assertTrue($admin->num_rows == 1 and $eventos->num_rows == 2);
+	}
+
 	/**
 	* Verifica el metodo deskonekte() en Conexion.php.
 	* Elimina la conexion a la base de datos creada en setUp().

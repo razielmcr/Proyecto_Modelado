@@ -60,7 +60,7 @@
 						 Password VARCHAR(255) NOT NULL)";
 			mysqli_query($conn, $crear);
 
-			insertar($conn, "admins", array("Modelado", "12345"));
+			cargarBD($conn);
 		}
 		else {
 			$conn = mysqli_connect($hostname, $username, $password, $database);
@@ -68,6 +68,20 @@
 		}
 
 		return $conn;
+	}
+
+	/**
+	* Metodo para cargar la base de datos con eventos y un usuario de Administrador.
+	* @param $conexion   Conexión para cargarlos en la bse de datos.
+	*/
+	function cargarBD($conn){
+		insertar($conn, "admins", array("Modelado", "12345"));
+		
+		$array = ["Arctic Monkeys", "2017-03-28", 100, 300, 15, "a00000","https://www.youtube.com/watch?v=LIQz6zZi7R0",700, 500, 500];
+		insertar($conn, "eventos", $array);
+
+		$array = ["Foals", "2017-03-09", 100, 300, 15, "a00001", "https://www.youtube.com/watch?v=s9gSx8hv6mE" ,700, 500, 500];
+		insertar($conn, "eventos", $array);
 	}
 
 	/**
